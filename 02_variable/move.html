@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習03</title>
+</head>
+
+<body>
+    <div>
+        <button id="left">←</button>
+        <button id="center">■</button>
+        <button id="right">→</button>
+    </div>
+
+    <img id="monster" src="https://pbs.twimg.com/media/EXae-7lWkAANYU6.png" alt="">
+
+    <!-- <script>
+        const leftbtn = document.getElementById('left');
+        const centerbtn = document.getElementById('center');
+        const rightbtn = document.getElementById('right');
+        const monster = document.getElementById('monster');
+        leftbtn.addEventListener('click', function () {
+            monster.style.transform = translateX(100 + 'px');
+        })
+
+    </script> -->
+    <script>
+        let num = 0;
+        const leftbtn = document.getElementById('left');
+        const centerbtn = document.getElementById('center');
+        const rightbtn = document.getElementById('right');
+        const monster = document.getElementById('monster');
+        leftbtn.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num -= 5}px)`;
+        });
+        centerbtn.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num = 0}px)`;
+        });
+        rightbtn.addEventListener('click', function () {
+            monster.style.transform = `translateX(${num += 5}px)`;
+        });
+    </script>
+</body>
+
+</html>
