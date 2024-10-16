@@ -16,7 +16,20 @@
     <img id="photo" src="https://picsum.photos/400/300?image=0">
 
     <script>
-
+        const plusbtn = document.getElementById('plus');
+        const setbtn = document.getElementById('set');
+        const photo = document.getElementById('photo');
+        let num = 0;
+        let url = 'https://picsum.photos/400/300?image=';
+        let resultbtn = document.getElementById('result');
+        plusbtn.addEventListener('click', function () {
+            num += 1;
+            setbtn.innerHTML = num;
+        });
+        setbtn.addEventListener('click', function () {
+            resultbtn.innerHTML = `${url + num}`;
+            photo.setAttribute('src', `${url + num}`);
+        });
     </script>
 </body>
 
