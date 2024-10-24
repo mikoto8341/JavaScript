@@ -31,6 +31,28 @@
             photo.setAttribute('src', `${url + num}`);
         });
     </script>
+    <!-- 正解 -->
+    <script>
+        let num = 0;
+        const url = 'https://picsum.photos/400/300?image=';
+
+        const plusBtn = document.getElementById('plus');
+        const setBtn = document.getElementById('set');
+        const result = document.getElementById('result');
+        const photo = document.getElementById('photo');
+
+        photo.setAttribute('src', url + num);
+
+        plusBtn.addEventListener('click', function () {
+            num += 1;
+            setBtn.innerHTML = num;
+        });
+
+        set.addEventListener('click', function () {
+            result.innerHTML = url + num;
+            photo.setAttribute('src', url + num);
+        });
+    </script>
 </body>
 
 </html>
