@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+</head>
+
+<body>
+    <p id="sample" class="hoge fuga">ほげ</p>
+
+    <script>
+        // let fruit = 'りんご';
+        // ture
+        // console.log(fruit == 'りんご');
+        // false
+        // console.log(fruit == 'ばなな');
+        // if (fruit == 'ばなな') {
+        //     console.log('りんごがあります。');
+        // }
+
+        // let year = 2024;
+        // if (year > 2018) {
+        //     console.log(`令和${year - 2018}年！`);
+        // }
+
+        // let fruit = 'りんご';
+        // if (fruit == 'ばなな') {
+        //     console.log('ばなながあります');
+        // } else {
+        //     console.log('ばなな以外はあります');
+        // }
+
+
+
+        // let fruit = '';
+        // if (fruit == 'ばなな') {
+        //     console.log('ばなながあります');
+        // } else if (fruit == 'りんご') {
+        //     console.log('りんごがあります');
+        // } else if (fruit) {
+        //     console.log('フルーツがありあります');
+        // } else {
+        //     console.log('フルーツ以外があります');
+        // }
+
+        // let year = 2025;
+        // if (year <= 1925) {
+        //     console.log('大昔！');
+        // } else if (year <= 1989) {
+        //     console.log(`昭和${year - 1925}年！`);
+        // } else if (year <= 2018) {
+        //     console.log(`平成${year - 1988}年！`);
+        // } else if (year <= 2024) {
+        //     console.log(`令和${year - 2018}年！`);
+        // }
+        // else {
+        //     console.log('未来！')
+        // }
+
+
+        const sample = document.getElementById('sample');
+        console.log(sample.classList);
+
+        //クラス名を追加する
+        sample.classList.add('piyo');
+
+        //クラス名を削除する
+        sample.classList.remove('hoge');
+
+        //クラス名を置き換える
+        sample.classList.replace('fuga', 'hogera');
+    </script>
+</body>
+
+</html>
