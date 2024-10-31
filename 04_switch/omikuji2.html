@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ2</title>
+    <style>
+        #result {
+            transition: 1s;
+        }
+
+        .active {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">占う</button>
+    <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt="占う">
+    </p>
+    <p id="message">何か一言が表示されます。</p>
+    <script>
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const message = document.getElementById('message');
+        const image = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/'
+        btn.addEventListener('click', function () {
+            const num = Math.floor(Math.random() * 5);
+            const text1 = Math.floor(Math.random() * 5);
+            switch (num) {
+                case 0:
+                    result.setAttribute('src', `${image}daikichi.png`);
+                    text1.innerHTML = `宝くじが当たりました, 大金持ちになりました, 毎日幸せです, 最高！, 楽しい！`;
+                    break;
+                case 1:
+                    result.setAttribute('src', `${image}chuukichi.png`);
+                    message.innerHTML = '虹が見れました';
+                    break;
+                case 2:
+                    result.setAttribute('src', `${image}syoukichi.png`);
+                    message.innerHTML = '雨が降って雷がなっています';
+                    break;
+                case 3:
+                    result.setAttribute('src', `${image}kyou.png`);
+                    message.innerHTML = '犬のフンを踏みました';
+                    break;
+                case 4:
+                    result.setAttribute('src', `${image}daikyou.png`);
+                    message.innerHTML = '何もかもうまくいきません';
+                    break;
+                default:
+                    console.log('エラー');
+            }
+            result.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
