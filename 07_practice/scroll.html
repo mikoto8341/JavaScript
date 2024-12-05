@@ -36,7 +36,7 @@
 
 <body>
     <button id="toTop">↑</button>
-    <script>
+    <!-- <script>
         const toTop = document.getElementById('toTop');
         window.addEventListener("scroll", function () {
             console.log(window.scrollY);
@@ -46,8 +46,22 @@
                 toTop.classList.remove('active');
             }
         });
-    </script>
+    </script> -->
+    <!-- &&かつ,||または -->
+    <script>
+        const toTop = document.querySelector("#toTop");
+        const limit = 300;
 
+        window.addEventListener("scroll", function () {
+            console.log(window.scrollY);
+
+            if (window.scrollY > limit && !toTop.classList.contains("active")) {
+                toTop.classList.add("active");
+            } else if (window.scrollY <= limit && toTop.classList.contains("active")) {
+                toTop.classList.remove("active");
+            }
+        });
+    </script>
 </body>
 
 </html>
