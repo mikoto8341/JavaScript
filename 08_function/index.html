@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <h1>見出し</h1>
+    <p>本文</p>
+    <button>ボタン</button>
     <!-- <script>
         function testFunc(val1 = 10, val2 = 20) {
             return val1 + val2;
@@ -54,12 +57,27 @@
     </script> -->
 
     <!-- 平均 -->
-    <script>
+    <!-- <script>
         let value = [5, 10, 15, 20, 25];
-        const setVal = (val) => {
-            return val;
-        };
-        console.log(setVal(value));
+        const getAverage = (val) => {
+            let num = 0;
+            for (let i = 0; i < val.length; i++) {
+                num += val[i];
+            }
+            num /= val.length;
+            return num;
+        }
+        console.log(getAverage([5, 10, 15, 20, 25]));
+    </script> -->
+    <!-- イベントと関数 -->
+    <script>
+        const clickEvent = (element) => {
+            console.log(element);
+            element.style.color = '#f00';
+        }
+        window.addEventListener('click', (e) => {
+            clickEvent(e.target);
+        });
     </script>
 </body>
 
