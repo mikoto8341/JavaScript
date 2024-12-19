@@ -14,21 +14,25 @@
     </div>
     <img class="pic" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt="" />
     <script>
-        const url = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/';
-        const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
-        const startBtn = document.querySelector('.start');
-        const stopBtn = document.querySelector('.stop');
-        const pic = document.querySelector('.pic');
+        const url = "https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/";
+        const files = ["daikichi.png", "chuukichi.png", "syoukichi.png", "kyou.png", "daikyou.png"];
+        const startBtn = document.querySelector(".start");
+        const stopBtn = document.querySelector(".stop");
+        const pic = document.querySelector(".pic");
         let timer;
-        const orderPic = () => {
-            const path = `${url}${files[files.length]}`;
-            pic.setAttribute('src', path);
-        }
-        startBtn.addEventListener('click', () => {
-            timer = setTimeout(orderPic, 1000);
-        });
-        stopBtn.addEventListener('click', () => {
+        let num = 0;
+        const changePic = () => {
+            const path = `${url}${files[num++ % files.length]}`;
+            pic.setAttribute("src", path);
+            timer = setTimeout(changePic, 500);
+        };
+        startBtn.addEventListener("click", () => {
             clearTimeout(timer);
+            timer = setTimeout(changePic, 500);
+        });
+        stopBtn.addEventListener("click", () => {
+            clearTimeout(timer);
+            num = 0;
         });
     </script>
 </body>

@@ -19,9 +19,11 @@
         const start = document.querySelector('.start');
         const stop = document.querySelector('.stop');
         const pic = document.querySelector('.pic');
+        let num = 0;
         let timer;
         const changePic = () => {
-            const path = `${url}${files[Math.floor(Math.random() * files.length)]}`;
+            // const path = `${url}${files[Math.floor(Math.random() * files.length)]}`;
+            const path = `${url}${files[num++ % files.length]}`;
             pic.setAttribute(`src`, path);
             timer = setTimeout(changePic, 100);
         }
