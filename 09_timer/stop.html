@@ -19,24 +19,24 @@
         const text = document.querySelector(".text");
         let timer;
         let count = 0;
-        text.innerHTML = "100を目指そう！"
+        text.textContent = "100を目指そう！"
         const countUp = () => {
             console.log(count++);
-            num.innerHTML = count;
+            num.textContent = count;
         };
         start.addEventListener("click", () => {
             count = 0;
-            text.innerHTML = "";
+            text.textContent = "";
             clearInterval(timer);
             timer = setInterval(countUp, 100);
         });
         stop.addEventListener("click", () => {
             clearInterval(timer);
             if (98 < count && count <= 102) {
-                text.innerHTML = "おしい！";
+                text.textContent = "おしい！";
             }
             if (count == 100) {
-                text.innerHTML = "すごい！";
+                text.textContent = "すごい！";
             }
         });
     </script>
