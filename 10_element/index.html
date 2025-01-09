@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アコーディオンメニュー</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 3em auto;
+        }
+
+        .faq__q {
+            padding: 0.5em 1em;
+            background-color: #39c;
+            cursor: pointer;
+        }
+
+        .faq__a {
+            margin-left: 0;
+            padding: 0 1em;
+        }
+
+        .faq__a {
+            height: 0;
+            margin-left: 0;
+            padding: 0 1em;
+            overflow: hidden;
+        }
+
+        .active.faq__a {
+            height: auto;
+            padding: 0.5em 1em;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 300px);
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <dl class="faq">
+        <div class="faq__item">
+            <dt class="faq__q">2022年11月分の料金はいつ引き落としされますか？</dt>
+            <dd class="faq__a">お客さまの締め日によって異なり、毎月6日、16日、26日の引き落とし日に分かれます。</dd>
+        </div>
+        <div class="faq__item">
+            <dt class="faq__q">前月分の料金が確定するのはいつですか？</dt>
+            <dd class="faq__a">お客さまの締め日から10日後が料金確定日の目安です。</dd>
+        </div>
+        <div class="faq__item">
+            <dt class="faq__q">請求書が届きました。「PayPay」で支払うことはできますか？</dt>
+            <dd class="faq__a">「PayPay」でお支払いできます。</dd>
+        </div>
+    </dl>
+    <button id="btn">生成</button>
+
+    <script>
+        const q = document.querySelectorAll('.faq__q');
+        for (let i = 0; i < q.length; i++) {
+            q[i].addEventListener('click', () => {
+                q[active].nextElementSibling.classList.remove("active");
+                active = i;
+                q[active].nextElementSibling.classList.add("active");
+            });
+        }
+
+        let count = 0;
+        let timer;
+        const url = ["https://kgsn-sound.com/wp-content/uploads/2024/12/jpeg-optimizer_mnet_mama_1732355782_3507576987084713759_2206967535.jpg", "https://ogre.natalie.mu/artist/120320/20230511/ini_art202303.jpg?imwidth=640&imdensity=1", "https://www.sonymusic.co.jp/img/common/artist_image/70009000/70009633/images/202410111630140.jpg", "https://ogre.natalie.mu/media/news/music/2024/1123/songoftheyear_aespa2.jpg?imwidth=240&imdensity=1", "https://api.kai-you.net/storage/images/upload_images/2024/04/acdfddc5-79dc-4fae-a25d-f68afc4fcd39/main.webp"];
+        const btn = document.querySelector('#btn');
+        const ul = document.createElement("ul");
+        document.body.append(ul);
+        const countUp = () => {
+            timer = setTimeout(countUp, 1000);
+            const li = document.createElement("li");
+            // li.innerHTML = Math.floor(Math.random() * 100);
+            const img = document.createElement("img");
+            img.setAttribute("src", url[Math.floor(Math.random() * url.length)]);
+            img.setAttribute("width", "300");
+            li.append(img);
+            ul.append(li);
+        }
+        countUp();
+    </script>
+</body>
+
+</html>
