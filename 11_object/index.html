@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オブジェクト</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            int: 123,
+            str: 'りんご',
+            bool: false,
+            obj: {
+                sub: 'バナナ'
+            },
+            名前: '山中',
+            play: () => {
+                console.log('play!');
+            },
+        };
+        console.log(obj["str"]);
+        console.log(obj.int);
+        obj.ran = Math.floor(Math.random() * 100);
+        delete obj.bool;
+        console.log(obj);
+        const key = "名前";
+        console.log(obj.key);
+        obj.play();
+
+        const empty = {};
+        console.log(empty);
+
+        const data = {
+            path: "https://dotown.maeda-design-room.net/wp-content/uploads/2022/01/thing_chick_01.png",
+            width: 200,
+            color: "#f00",
+            play: () => {
+                console.log('play!');
+            }
+        };
+
+        const img = document.createElement("img");
+        img.setAttribute("src", data.path);
+        img.setAttribute("width", data.width);
+        img.style.border = `6px solid ${data.color}`;
+        document.body.append(img);
+        img.addEventListener('click', () => {
+            data.play();
+        });
+    </script>
+</body>
+
+</html>
